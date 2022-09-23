@@ -1,0 +1,24 @@
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30vh 60vh;
+}
+
+.todo-container {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;    
+}
+
+.postit-container {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.notes-container {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+/* border-color: red;
+    border-style: dotted;
+    border-width: 0.1px; */

@@ -1,15 +1,10 @@
-.header-container {
-    background-color: aliceblue;
-    height: fit-content;
-}
-
 .title {
     color: #4b4b4b; 
     font-family: 'Raleway',sans-serif; 
-    font-size: 62px; 
-    font-weight: 700; 
-    line-height: 62px; 
-    margin: 0 0 24px; 
+    font-size: 62px;
+    font-weight: 700;
+    line-height: 50px;
+    margin: 0 0 24px;
     /* text-align: center;  */
     text-transform: uppercase;
 

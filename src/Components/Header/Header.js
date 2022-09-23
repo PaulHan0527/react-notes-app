@@ -8,7 +8,7 @@ const Header = (props) => {
     }
 
     return (
-        <div className='header-container'>
+        <div>
             <button className='title-button' onClick={() => titleClick()}>
                 <h1 className='title'>LIGHT NOTES</h1>
             </button>
