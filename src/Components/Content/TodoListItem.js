@@ -41,21 +41,21 @@ const TodoListItem = (props) => {
                     </div>
                 }
                 </div>
-                <div className={props.entry.completed ? "complete-button" : "incomplete-button"}>
+                <button className={props.entry.completed ? "complete-button" : "incomplete-button"}>
                     {
                         props.entry.completed
                         ? <div className="tooltip" onClick={() =>toggleCompleteStatus()}><FontAwesomeIcon icon={faCheck} size='2x'/><span className="tooltiptext">Click to Toggle Status!</span></div>
                         : <div className="tooltip" onClick={() =>toggleCompleteStatus()}><FontAwesomeIcon icon={faMinus} size='2x'/><span className="tooltiptext">Click to Complete!</span></div>
                     } 
-                </div>
+                </button>
                 
-                <div className="expand-button" {...getToggleProps()}>
+                <button className="expand-button" {...getToggleProps()}>
                     {
                         isExpanded 
                         ? <FontAwesomeIcon icon={faCaretUp} size='2x'/> 
                         : <FontAwesomeIcon icon={faCaretDown} size='2x'/>
                     }
-                </div>
+                </button>
                 
                 {/* props.entry.content + " " + props.entry.date */}
             </div>

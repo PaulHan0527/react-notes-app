@@ -39,7 +39,7 @@ const TodoList = (props) => {
             </div>
             
             {/* Todo list content */}
-            <div className="todoList-content">
+            <div className="todoList-content" id="style-1">
             {
                 list.length !== 0 
                 ? list.map((entry, index) => {
