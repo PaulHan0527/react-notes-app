@@ -1,13 +1,42 @@
 .todoList-container {
     margin: 3%;
     height: 95%;
-    border-color: red;
-    border-style: dashed;
 }
 
-
 .todoList-header {
-    height: 8%;
+    margin-bottom: 3%;
+    overflow: hidden;
+}
+
+.todoList-header-title {
+    float: left;
+    width: 40%;
+    border-radius: 20px;
+    background-color: #E2F0CB;
+    text-align: center;
+    font-size: 28px;
+}
+
+.todoList-header-add {
+    float: right;
+    width: 10%;
+    border-radius: 20px;
+    border-color: transparent;
+    background-color: #B5EAD7;
+    text-align: center;
+    font-size: 28px;
+}
+
+.todoList-header-add:hover {
+    cursor: pointer;
     border-color: black;
+    
+}
+
+.todoList-content {
+    height: 93%;
+    width: 100%;
+
+    border-color: red;
     border-style: dashed;
 }

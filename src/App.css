@@ -6,7 +6,7 @@
 
 .header-container {
   height: 10vh !important;
-  background-color: rgb(215, 233, 250);
+  background-color: #C7CEEA;
 }
 
 .content-container {
@@ -15,7 +15,7 @@
 }
 
 .box {
-  background-color: aliceblue;
+  background-color: #C7CEEA;
   margin: 10px;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   border-radius: 20px;

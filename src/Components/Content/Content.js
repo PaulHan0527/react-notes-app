@@ -12,8 +12,7 @@ const Content = (props) => {
         <div className='container'>
             <div className='box todo-container'>
                 <TodoList 
-                    todoList = {props.todoList}
-                    setTodoList = {props.setTodoList}
+                
                 />
             </div>
             <div className='box post-container'>
