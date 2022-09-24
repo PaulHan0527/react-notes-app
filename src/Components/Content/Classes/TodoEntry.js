@@ -11,7 +11,6 @@ class TodoEntry {
         tea-green
         columbia-blue
         */
-        this.opened = true;
         this.completed = false;
     }
 

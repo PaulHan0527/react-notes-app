@@ -9,7 +9,8 @@ const TodoListItem = (props) => {
     const config = {
         easing: 'linear(.93,.12,.42,.25)'
     };
-    const { getCollapseProps, getToggleProps, isExpanded } = useCollapse(config);
+
+    const { getCollapseProps, getToggleProps, isExpanded, setExpanded } = useCollapse(config);
 
     // Functions to use
     const deleteEntry = () => {
@@ -27,7 +28,7 @@ const TodoListItem = (props) => {
                     {isExpanded
                     ? <div {...getCollapseProps()}>
                         <div>
-                            {props.entry.content + " " + props.entry.date}
+                            {"Opened! " + props.entry.content + " " + props.entry.date}
                         </div>
 
                         <div>
@@ -37,7 +38,9 @@ const TodoListItem = (props) => {
                         </div>
                     </div>
                     : <div>
-                        <div>Closed</div>
+                        <div>
+                            {props.entry.content + " " + props.entry.date}
+                        </div>
                     </div>
                 }
                 </div>
@@ -56,22 +59,16 @@ const TodoListItem = (props) => {
                         : <FontAwesomeIcon icon={faCaretDown} size='2x'/>
                     }
                 </button>
-                
-                {/* props.entry.content + " " + props.entry.date */}
-            </div>
-            {/* <>
-                {
-                    props.entry.opened 
-                    ? <div className="todoList-entry-opened">
-                        <button className="todoList-entry-remove-button" onClick={() => deleteEntry()}>
-                            <FontAwesomeIcon icon={faTrashCan} size="2x" />
-                        </button>
-                    </div> 
-                    : <div className="todoList-entry-closed">
-                    
-                    </div>
+                {isExpanded 
+                ? <div>
+                    <button className="todoList-entry-remove-button" onClick={() => deleteEntry()}>
+                        <FontAwesomeIcon icon={faTrashCan} size='2x' />
+                    </button>
+                </div>
+                : <></>
                 }
-            </> */}            
+                
+            </div>          
         </div>
     )
 }

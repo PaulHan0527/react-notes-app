@@ -12,6 +12,11 @@ const TodoList = (props) => {
     todoList[0].completed = true;
     todoList[2].completed = true;
 
+    let opened = [];
+    for(let i = 0; i < todoList.length; i++) {
+        opened.push(i);
+    }
+
     const [list, setList] = useState(todoList);
 
     const handleDeleteItem = (index) => {
