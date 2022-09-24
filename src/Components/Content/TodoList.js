@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import '../css/todoList.css';
 import TodoEntry from "./Classes/TodoEntry";
+import TodoListItem from "./TodoListItem";
 
 const TodoList = (props) => {
     // set this variable by auth user
-    let todoList = [new TodoEntry("Bairnes React Assessment", "09/27/2022"),
-                    new TodoEntry("Bungie Game Assessment", "09/30/2022")];
+    let todoList = [new TodoEntry("Bairnes React Assessment", "09/27/2022", "columbia-blue"),
+                    new TodoEntry("Bungie Game Assessment", "09/30/2022", "tea-green"),
+                    new TodoEntry("Temp 1", "09/30/2022", "light-salmon-pink"),
+                    new TodoEntry("Temp 1", "09/30/2022", "very-pale-orange"),];
+    todoList[0].completed = true;
+    todoList[2].completed = true;
 
+    const [list, setList] = useState(todoList);
+
+    const handleDeleteItem = (index) => {
+        setList(list.filter(item => item !== list[index]));
+    }
+
+    const toggleCompleteStatus = (index) => {
+        // I need a better way for this (without using additional memory)
+        
+        let temp = [...list];
+        temp[index].completed = !temp[index].completed;
+        setList(temp);
+    }
 
     return (
         <div className="todoList-container">
@@ -15,7 +33,7 @@ const TodoList = (props) => {
                 <div className="todoList-header-title">
                     To-Do List
                 </div>
-                <button className="todoList-header-add" onClick={() => {console.log(todoList); console.log(todoList.length);}}>
+                <button className="todoList-header-add" onClick={() => {console.log(list); console.log(list.length);}}>
                     +
                 </button>
             </div>
@@ -23,15 +41,17 @@ const TodoList = (props) => {
             {/* Todo list content */}
             <div className="todoList-content">
             {
-                todoList.length !== 0 
-                ? todoList.map(entry => {
-                    return (<div>
-                                <div>{entry.content}</div>
-                                <div>{entry.date}</div>
-                            </div>
-                            )
+                list.length !== 0 
+                ? list.map((entry, index) => {
+                    return <TodoListItem
+                        key={index}
+                        index={index}
+                        entry={entry}
+                        handleDeleteItem={handleDeleteItem}
+                        toggleCompleteStatus={toggleCompleteStatus}
+                    />
                 })
-                : <div>There are no items.</div>
+                : <div className="no-item-message">There are no items.</div>
             }
             </div>
             

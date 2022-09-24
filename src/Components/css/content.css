@@ -6,7 +6,7 @@
 
 .todo-container {
     grid-column: 1 / 2;
-    grid-row: 1 / 3;    
+    grid-row: 1 / 3;
 }
 
 .post-container {

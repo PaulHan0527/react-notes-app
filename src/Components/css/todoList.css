@@ -29,14 +29,167 @@
 
 .todoList-header-add:hover {
     cursor: pointer;
-    border-color: black;
+    background-color: #9de7cc;
+    box-shadow: 0px 0.5px 1px 0px rgba(0, 0, 0, 0.1);
     
 }
 
 .todoList-content {
     height: 93%;
     width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    padding-top: 1%;
+}
 
+.todoList-entry-opened {
+    width: 95%;
+    margin: 2%;
+    height: 40%;
+    transition: height 0.1s linear;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 1);
+}
+
+.todoList-entry-closed {
+    width: 95%;
+    margin: 2%;
+    height: 15%;
+    transition: height 0.1s linear;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px 0px rgba(102, 102, 102, 0.5);
+}
+
+.todoList-entry-closed:hover {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.todoList-entry-remove-button {
+    float: right;
+    margin-right: 3%;
+    background-color: transparent;
+    border-radius: 10px;
+    color: rgb(153, 153, 153);
+    
+    border-color: transparent;
+/* 
     border-color: red;
+    border-style: dashed; */
+}
+
+.todoList-entry-remove-button:hover {
+    cursor: pointer;
+    color: rgb(68, 68, 68);
+}
+
+.expand-button {
+    text-align: center;
+    float: right;
+    width: 10%;
+    height: 30%;
+    margin-top: 7.5%;
+    color: rgb(129, 129, 129);
+
+    /* border-color: blue;
+    border-style: dashed; */
+
+}
+
+.expand-button:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.complete-button {
+    text-align: center;
+    float: right;
+    width: 10%;
+    height: 30%;
+    margin-top: 7.5%;
+    color: rgb(0, 255, 0);
+}
+
+.complete-button:hover {
+    cursor: pointer;
+}
+
+.incomplete-button {
+    text-align: center;
+    float: right;
+    width: 10%;
+    height: 30%;
+    margin-top: 7.5%;
+    color: rgb(255, 93, 93);
+}
+
+.incomplete-button:hover {
+    cursor: pointer;
+    color: red;
+    
+}
+
+.todoList-entry-header {
+    display: flex;
+    height: 100%;
+    /* border-style: dashed;
+    border-color: green; */
+
+}
+
+.todoList-entry-header-content {
+    width: 100%;
+    margin: 3%;
     border-style: dashed;
+    border-color: blue;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(155, 155, 155);
+    border-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    margin-left: -70px;
+    margin-top: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.no-item-message {
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+
+
+
+/* Color Themes for posts */
+.light-salmon-pink {
+    background-color: #FF9AA2;
+}
+.melon  {
+    background-color: #FFB7B2;
+}
+.very-pale-orange {
+    background-color: #FFDAC1;
+}
+.champagne {
+    background-color: #F3EACE;
+}
+.tea-green {
+    background-color: #D7ECC9;
+}
+.columbia-blue {
+    background-color: #C2DEDF;
 }
