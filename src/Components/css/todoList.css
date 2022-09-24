@@ -1,0 +1,13 @@
+.todoList-container {
+    margin: 3%;
+    height: 95%;
+    border-color: red;
+    border-style: dashed;
+}
+
+
+.todoList-header {
+    height: 8%;
+    border-color: black;
+    border-style: dashed;
+}
