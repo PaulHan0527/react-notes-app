@@ -25,7 +25,11 @@ const TodoList = (props) => {
         setModalIsOpen(false);
     }
     const addItem = () => {
-
+        let item = new TodoEntry("Newly Created Task", "09/30/2022", "very-pale-orange");
+        let temp = [...list];
+        temp.push(item);
+        setList(temp);
+        setModalIsOpen(false);
     }
 
     const handleDeleteItem = (index) => {
@@ -54,18 +58,24 @@ const TodoList = (props) => {
                     +
                 </button>
                 <Modal isOpen={modalIsOpen}
-                    className="todoList-modal" overlayClassName={"todoList-modal-overlay"}
+                    className="todoList-modal" overlayClassName={"todoList-modal-overlay"} ariaHideApp={false}
                 >
                     <div className="todoList-modal-header">
                         Create a To-Do List
                     </div>
                     <br></br>
-                    <button onClick={closeModal} className="todoList-modal-create-button">
-                        Create
-                    </button>
-                    <button onClick={closeModal} className="todoList-modal-cancel-button">
-                        close
-                    </button>
+                    <div className="todoList-modal-content">
+
+
+                    </div>
+                    <div className="todoList-modal-footer">
+                        <button onClick={addItem} className="todoList-modal-create-button">
+                            Create
+                        </button>
+                        <button onClick={closeModal} className="todoList-modal-cancel-button">
+                            close
+                        </button>
+                    </div>
                 </Modal>
             </div>
             

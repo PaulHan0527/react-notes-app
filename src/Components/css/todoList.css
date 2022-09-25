@@ -15,6 +15,9 @@
     background-color: #E2F0CB;
     text-align: center;
     font-size: 28px;
+    font-weight: 500;
+    color: #4b4b4b; 
+    font-family: 'Raleway',sans-serif; 
 }
 
 .todoList-header-add {
@@ -200,7 +203,7 @@
     border: 1px solid #ccc;
     background: #fff;
     overflow: auto;
-    border-radius: 4px;
+    border-radius: 20px;
     outline: none;
     padding: 20px;
 
@@ -230,20 +233,77 @@
     opacity: 0;
 }
 
-.todoList-modal-create-button {
+.todoList-modal-header {
+    border-radius: 20px;
     height: 10%;
-    width: 10%;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    background-color: #C7CEEA;
+
+    color: #4b4b4b; 
+    font-family: 'Raleway',sans-serif; 
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.todoList-modal-content {
+    height: 70%;
+    background-color: #C7CEEA;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.todoList-modal-footer {
+    height: 10%;
+    margin-top: 3%;
+    
+}
+
+
+.todoList-modal-create-button {
+    margin-left: auto;
+    margin-right: 0;
+    width: 15%;
+    height: 100%;
     border-radius: 20px;
     border-color: transparent;
     background-color: #9de7cc;
+
+    color: #4b4b4b; 
+    font-family: 'Raleway',sans-serif; 
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.todoList-modal-create-button:hover {
+    cursor: pointer;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 1);
 }
 
 .todoList-modal-cancel-button {
-    height: 10%;
-    width: 10%;
+    float: right;
+    width: 15%;
+    height: 100%;
     border-radius: 20px;
     border-color: transparent;
     background-color: red;
+
+    color: #000; 
+    font-family: 'Raleway',sans-serif; 
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.todoList-modal-cancel-button:hover {
+    cursor: pointer;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 1);
 }
 
 
