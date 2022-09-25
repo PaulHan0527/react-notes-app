@@ -2,7 +2,7 @@ import React from "react";
 import '../css/todoList.css';
 import useCollapse from "react-collapsed";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashCan, faCaretDown, faCaretUp, faCheck, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { faTrashCan, faCaretDown, faCaretUp, faCheck, faMinus, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 const TodoListItem = (props) => {
     // Collapsible Properties
@@ -29,7 +29,7 @@ const TodoListItem = (props) => {
                     {isExpanded
                     ? <div {...getCollapseProps()}>
                         <div>
-                            {"Opened! " + props.entry.content + " " + props.entry.date}
+                            {"Opened! " + props.entry.description + " " + props.entry.date}
                         </div>
 
                         <div>
@@ -40,7 +40,7 @@ const TodoListItem = (props) => {
                     </div>
                     : <div>
                         <div>
-                            {props.entry.content + " " + props.entry.date}
+                            {props.entry.title + " " + props.entry.date}
                         </div>
                     </div>
                 }
@@ -62,6 +62,9 @@ const TodoListItem = (props) => {
                 </button>
                 {isExpanded 
                 ? <div>
+                    <button className="todoList-entry-edit-button">
+                        <FontAwesomeIcon icon={faPenToSquare} size='2x' />
+                    </button>
                     <button className="todoList-entry-remove-button" onClick={() => deleteEntry()}>
                         <FontAwesomeIcon icon={faTrashCan} size='2x' />
                     </button>

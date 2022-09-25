@@ -1,6 +1,7 @@
 class TodoEntry {
-    constructor(content, date, color) {
-        this.content = content;
+    constructor(title, description, date, color) {
+        this.title = title;
+        this.description = description;
         this.date = date;
         this.color = color;
         /* 
@@ -12,10 +13,6 @@ class TodoEntry {
         columbia-blue
         */
         this.completed = false;
-    }
-
-    toggleEntry() {
-        this.completed = !this.completed;
     }
 }
 export default TodoEntry;

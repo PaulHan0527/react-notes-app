@@ -3,9 +3,6 @@ import React from 'react';
 import Header from './Components/Header/Header.js';
 import Content from './Components/Content/Content.js';
 function App() {
-  // authenticate here
-  // fetch every info we need
-
   return (
     <div className='app-container'>
       <div className='header-container'>

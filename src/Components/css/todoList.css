@@ -14,9 +14,9 @@
     border-radius: 20px;
     background-color: #E2F0CB;
     text-align: center;
-    font-size: 28px;
-    font-weight: 500;
-    color: #4b4b4b; 
+    font-size: 25px;
+    font-weight: 600;
+    color: #444444; 
     font-family: 'Raleway',sans-serif; 
 }
 
@@ -83,6 +83,20 @@
 
 .todoList-entry-closed:hover {
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.todoList-entry-edit-button {
+    float: right;
+    position: absolute;
+    bottom: 5%;
+    right: 8%;
+    background-color: transparent;
+    border-radius: 10px;
+    color: rgb(124, 124, 124);
+    border-color: transparent;
+}
+.todoList-entry-edit-button:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
 }
 
 .todoList-entry-remove-button {
@@ -202,13 +216,13 @@
 
     border: 1px solid #ccc;
     background: #fff;
-    overflow: auto;
+    overflow: hidden;
     border-radius: 20px;
-    outline: none;
+    vertical-align: middle;
     padding: 20px;
-
-    height: 50%;
-    width: 50%;
+    padding-bottom: 0px;
+    height: 70%;
+    width: 60%;
 }
 
 .todoList-modal-overlay {
@@ -235,7 +249,7 @@
 
 .todoList-modal-header {
     border-radius: 20px;
-    height: 10%;
+    height: 8%;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     
     display: flex;
@@ -258,10 +272,106 @@
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
+.todoList-item-form {
+    height: 100%;
+    width: 100%;
+    /* border: #000 dashed; */
+}
+.todoList-item-form-title {
+    height: 20%;
+    margin-left: 3%;
+    margin-right: 3%;
+    padding-top: 2%;
+
+    /* border: red dashed; */
+}
+.todoList-item-form-title-input {
+    height: 50%;
+    width: 95%;
+    font-size: medium;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.todoList-item-form-description {
+    height: 50%;
+    margin-left: 3%;
+    margin-right: 3%;
+
+    /* border: black dashed; */
+}
+
+.todoList-item-form-description-input {
+    height: 70%;
+    width: 95%;
+    font-size: large;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+
+.todoList-item-form-bundle {
+    height: 20%;
+    margin-left: 3%;
+    margin-right: 3%;
+    /* border: darkblue dashed; */
+    display: flex;
+}
+.todoList-item-form-date {
+    width: 40%;
+    /* border: black dashed; */
+}
+
+.todoList-item-form-date-input {
+    font-size: x-large;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 20px;
+}
+
+.todoList-item-form-color {
+    width: 60%;
+    padding-left: 5%;
+    /* border: black dashed; */
+}
+
+textarea {
+    resize: none;
+}
+
+.todoList-item-form-label {
+    color: #4b4b4b; 
+    font-family: 'Raleway',sans-serif; 
+    font-size: 17px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1%;
+}
+
+.color-option-circle {
+    border-radius: 25px;
+    color: rgb(175, 175, 175);
+    margin: 1%;
+}
+
+.color-option-circle-selected {
+    border-radius: 25px;
+    color: rgb(58, 58, 58);
+    margin: 1%;
+}
+
+.color-option-circle:hover {
+    color: #444444;
+    cursor: pointer;
+}
+
 .todoList-modal-footer {
-    height: 10%;
-    margin-top: 3%;
-    
+    height: 8%;
+
+    /* border: black dashed; */
 }
 
 
@@ -312,7 +422,12 @@
     margin-top: 2%;
 }
 
-
+.disabled {
+    opacity: 0.5;
+}
+.disabled:hover {
+    cursor: no-drop;
+}
 
 
 /* Color Themes for posts */
