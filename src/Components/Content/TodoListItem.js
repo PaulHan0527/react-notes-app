@@ -14,6 +14,7 @@ const TodoListItem = (props) => {
 
     // Functions to use
     const deleteEntry = () => {
+        setExpanded(false);
         props.handleDeleteItem(props.index);
     }
 

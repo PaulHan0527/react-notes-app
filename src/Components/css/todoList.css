@@ -31,7 +31,7 @@
     cursor: pointer;
     background-color: #9de7cc;
     box-shadow: 0px 0.5px 1px 0px rgba(0, 0, 0, 0.1);
-    
+
 }
 
 .todoList-content {
@@ -44,23 +44,20 @@
     scrollbar-gutter: stable;
 }
 
-#style-1::-webkit-scrollbar-track
-{
-	border-radius: 20px;
-	background-color: #F5F5F5;
-}
-
-#style-1::-webkit-scrollbar
-{
-	width: 5px;
+#style-1::-webkit-scrollbar-track {
     border-radius: 20px;
-	background-color: #F5F5F5;
+    background-color: #F5F5F5;
 }
 
-#style-1::-webkit-scrollbar-thumb
-{
-	border-radius: 20px;
-	background-color: rgb(175, 175, 175);
+#style-1::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 20px;
+    background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: rgb(175, 175, 175);
 }
 
 .todoList-entry-opened {
@@ -155,7 +152,7 @@
 .incomplete-button:hover {
     cursor: pointer;
     color: red;
-    
+
 }
 
 .todoList-entry-header {
@@ -183,16 +180,72 @@
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
-    
+
     position: absolute;
     z-index: 1;
     margin-top: -60px;
     margin-left: -60px;
-} 
+}
 
 /* .tooltip:hover .tooltiptext {
     visibility: visible;
 }  */
+
+.todoList-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+
+    height: 50%;
+    width: 50%;
+}
+
+.todoList-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+
+.todoList-modal-create-button {
+    height: 10%;
+    width: 10%;
+    border-radius: 20px;
+    border-color: transparent;
+    background-color: #9de7cc;
+}
+
+.todoList-modal-cancel-button {
+    height: 10%;
+    width: 10%;
+    border-radius: 20px;
+    border-color: transparent;
+    background-color: red;
+}
+
 
 .no-item-message {
     margin-left: 5%;
@@ -206,18 +259,23 @@
 .light-salmon-pink {
     background-color: #FF9AA2;
 }
-.melon  {
+
+.melon {
     background-color: #FFB7B2;
 }
+
 .very-pale-orange {
     background-color: #FFDAC1;
 }
+
 .champagne {
     background-color: #F3EACE;
 }
+
 .tea-green {
     background-color: #D7ECC9;
 }
+
 .columbia-blue {
     background-color: #C2DEDF;
 }

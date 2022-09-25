@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import '../css/todoList.css';
 import TodoEntry from "./Classes/TodoEntry";
 import TodoListItem from "./TodoListItem";
+import Modal from "react-modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown, faCaretUp, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const TodoList = (props) => {
     // set this variable by auth user
@@ -12,12 +15,18 @@ const TodoList = (props) => {
     todoList[0].completed = true;
     todoList[2].completed = true;
 
-    let opened = [];
-    for(let i = 0; i < todoList.length; i++) {
-        opened.push(i);
-    }
-
     const [list, setList] = useState(todoList);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    const openModal = () => {
+        setModalIsOpen(true);
+    }
+    const closeModal = () => {
+        setModalIsOpen(false);
+    }
+    const addItem = () => {
+
+    }
 
     const handleDeleteItem = (index) => {
         setList(list.filter(item => item !== list[index]));
@@ -38,9 +47,26 @@ const TodoList = (props) => {
                 <div className="todoList-header-title">
                     To-Do List
                 </div>
-                <button className="todoList-header-add" onClick={() => {console.log(list); console.log(list.length);}}>
+                {/* <button className="todoList-header-add" onClick={() => {console.log(list); console.log(list.length);}}>
+                    <FontAwesomeIcon icon={faCaretDown} />
+                </button> */}
+                <button className="todoList-header-add" onClick={openModal}>
                     +
                 </button>
+                <Modal isOpen={modalIsOpen}
+                    className="todoList-modal" overlayClassName={"todoList-modal-overlay"}
+                >
+                    <div className="todoList-modal-header">
+                        Create a To-Do List
+                    </div>
+                    <br></br>
+                    <button onClick={closeModal} className="todoList-modal-create-button">
+                        Create
+                    </button>
+                    <button onClick={closeModal} className="todoList-modal-cancel-button">
+                        close
+                    </button>
+                </Modal>
             </div>
             
             {/* Todo list content */}
