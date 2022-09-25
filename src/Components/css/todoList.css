@@ -352,31 +352,32 @@ textarea {
 }
 
 .color-option-circle {
-    border-radius: 25px;
+    border-radius: 50px;
+    border-width: 0px;
     color: rgb(175, 175, 175);
     margin: 1%;
 }
 
 .color-option-circle-selected {
     border-radius: 25px;
-    color: rgb(58, 58, 58);
+    color: rgb(31, 31, 31);
     margin: 1%;
 }
 
 .color-option-circle:hover {
-    color: #444444;
+    color: #5a5a5a;
     cursor: pointer;
 }
 
 .todoList-modal-footer {
     height: 8%;
-
+    margin-top: 2%;
     /* border: black dashed; */
 }
 
 
 .todoList-modal-create-button {
-    margin-left: auto;
+    margin-left: 65%;
     margin-right: 0;
     width: 15%;
     height: 100%;
