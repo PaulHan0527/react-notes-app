@@ -28,19 +28,27 @@ const TodoListItem = (props) => {
                 <div className="todoList-entry-header-content">
                     {isExpanded
                     ? <div {...getCollapseProps()}>
-                        <div>
-                            {"Opened! " + props.entry.description + " " + props.entry.date}
-                        </div>
-
-                        <div>
+                        <div className="todoList-entry-content-expanded" id="style-1">
                             <div>
-                                Expanded Content
+                                <div>{props.entry.title}</div>
+                            </div>
+                            <div>
+                                Date : {props.entry.date}
+                            </div>
+                            <div>
+                                Description :
+                            </div>
+                            <div>
+                                {props.entry.description}
                             </div>
                         </div>
                     </div>
-                    : <div>
+                    : <div className="todoList-entry-content-collapsed">
                         <div>
-                            {props.entry.title + " " + props.entry.date}
+                            {props.entry.title}
+                        </div>
+                        <div>
+                            Date : {props.entry.date} 
                         </div>
                     </div>
                 }

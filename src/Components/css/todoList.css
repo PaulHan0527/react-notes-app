@@ -84,6 +84,7 @@
 .todoList-entry-closed:hover {
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
+
 .todoList-entry-edit-button {
     float: right;
     position: absolute;
@@ -183,9 +184,38 @@
 
 .todoList-entry-header-content {
     width: 100%;
-    margin: 2%;
+    margin-left: 2%;
+
+    position: relative;
     /* border-style: dashed;
     border-color: blue; */
+}
+
+.todoList-entry-content-collapsed {
+    color: #4b4b4b; 
+    font-family: 'Raleway',sans-serif; 
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: 90%;
+    /* border: black dashed; */
+}
+.todoList-entry-content-expanded {
+    color: #4b4b4b; 
+    font-family: 'Raleway',sans-serif; 
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    height: 80%;
+    width: 95%;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    /* border: black dashed; */
 }
 
 .tooltip .tooltiptext {
