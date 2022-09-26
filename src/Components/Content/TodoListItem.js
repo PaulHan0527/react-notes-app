@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import '../css/todoList.css';
+import Modal from "react-modal";
 import useCollapse from "react-collapsed";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import { faTrashCan, faCaretDown, faCaretUp, faCheck, faMinus, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 const TodoListItem = (props) => {
@@ -22,6 +24,7 @@ const TodoListItem = (props) => {
         props.toggleCompleteStatus(props.index);
     }
 
+
     return (
         <div className={isExpanded ? 'todoList-entry-opened ' + props.entry.color : 'todoList-entry-closed ' + props.entry.color}>
             <div className="todoList-entry-header">
@@ -30,7 +33,7 @@ const TodoListItem = (props) => {
                     ? <div {...getCollapseProps()}>
                         <div className="todoList-entry-content-expanded" id="style-1">
                             <div>
-                                <div>{props.entry.title}</div>
+                                <div className="todoList-entry-content-expanded-title">{props.entry.title}</div>
                             </div>
                             <div>
                                 Date : {props.entry.date}
@@ -38,8 +41,8 @@ const TodoListItem = (props) => {
                             <div>
                                 Description :
                             </div>
-                            <div>
-                                {props.entry.description}
+                            <div id="newline">
+                                {props.entry.description.replaceAll("\r\n", "<br/>\r\n")}
                             </div>
                         </div>
                     </div>
@@ -70,9 +73,10 @@ const TodoListItem = (props) => {
                 </button>
                 {isExpanded 
                 ? <div>
-                    <button className="todoList-entry-edit-button">
+                    <button className="todoList-entry-edit-button" onClick={() => {console.log("It is not impleted yet!")}}>
                         <FontAwesomeIcon icon={faPenToSquare} size='2x' />
                     </button>
+                    
                     <button className="todoList-entry-remove-button" onClick={() => deleteEntry()}>
                         <FontAwesomeIcon icon={faTrashCan} size='2x' />
                     </button>

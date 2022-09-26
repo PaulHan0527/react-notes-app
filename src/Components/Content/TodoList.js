@@ -4,7 +4,6 @@ import TodoEntry from "./Classes/TodoEntry";
 import TodoListItem from "./TodoListItem";
 import Modal from "react-modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown, faCaretUp, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faCircle } from "@fortawesome/free-regular-svg-icons";
 
 const TodoList = (props) => {

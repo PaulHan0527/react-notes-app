@@ -217,6 +217,10 @@
     overflow-y: auto;
     /* border: black dashed; */
 }
+.todoList-entry-content-expanded-title {
+    font-size: 30px;
+    font-weight: 800;
+}
 
 .tooltip .tooltiptext {
     visibility: hidden;
@@ -458,6 +462,10 @@ textarea {
 }
 .disabled:hover {
     cursor: no-drop;
+}
+
+#newline {
+    white-space: pre-wrap;
 }
 
 
