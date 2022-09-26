@@ -2,3 +2,42 @@
     height: 85%;
     margin: 3%;
 }
+
+.postitList-header {
+    height: 15%;
+    /* border: black dashed; */
+}
+
+.postitList-header-title {
+    float: left;
+    background-color: aliceblue;
+    border-radius: 20px;
+    width: 30%;
+    font-weight: 500;
+    font-size: 25px;
+    text-align: center;
+}
+
+.postitList-header-add-button {
+    float: right;
+    width: 9%;
+    height: 80%;
+    border-radius: 20px;
+    border: transparent;
+    text-align: center;
+    font-size: 28px;  
+}
+.postitList-header-add-button:hover {
+    background-color: rgb(176, 218, 255);
+    cursor: pointer;
+}
+
+.postitList-content {
+    height: 83%;
+    margin-top: 1%;
+    /* border: black dashed; */
+    
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
