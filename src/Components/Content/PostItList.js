@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import '../css/postitList.css';
 import PostEntry from "./Classes/PostEntry";
+import PostItListItem from "./PostItListItem";
 
 const PostItList = (props) => {
 
     let postList = [new PostEntry("This is post 1"),
+                new PostEntry("This is post 1"),
+                new PostEntry("This is post 2"),
+                new PostEntry("This is post 1"),
                 new PostEntry("This is post 1"),
                 new PostEntry("This is post 1"),
                 new PostEntry("This is post 1"),
@@ -24,11 +28,14 @@ const PostItList = (props) => {
                 </button>
             </div>
 
-            <div className="postitList-content">
+            <div className="postitList-content" id="style-1">
                 {list.length !== 0 
-                ? <div>
-                    
-                </div>
+                ? list.map((entry, index) => {
+                    return <PostItListItem 
+                        key={index}
+                        entry={entry}
+                    />
+                })
                 : <div>
                     There are no items.
                 </div>
