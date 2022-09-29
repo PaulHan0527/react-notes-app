@@ -23,7 +23,7 @@ const TodoList = (props) => {
     const [selectedColor, setSelectedColor] = useState('');
     const [submitButton, setSubmitButton] = useState(false);
 
-    const colorOptions = ["light-salmon-pink","melon","very-pale-orange","champagne","tea-green","columbia-blue"];
+    
 
     const openModal = () => {
         setModalIsOpen(true);
@@ -45,7 +45,7 @@ const TodoList = (props) => {
     const addItem = () => {
         let item = new TodoEntry(title, description, date.replaceAll('-', '/'), selectedColor);
         let temp = [...list];
-        temp.push(item);
+        temp.unshift(item);
         setList(temp);
 
         closeModal();
@@ -126,8 +126,8 @@ const TodoList = (props) => {
                                     <label className="todoList-item-form-label">
                                         Color
                                     </label>
-                                    {colorOptions.map((colorString) => {
-                                        if(colorOptions === colorString) {
+                                    {props.colorOptions.map((colorString) => {
+                                        if(props.colorOptions === colorString) {
                                             console.log(selectedColor)
                                         }
                                         return <FontAwesomeIcon
