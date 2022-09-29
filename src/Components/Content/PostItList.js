@@ -5,7 +5,7 @@ import PostItListItem from "./PostItListItem";
 
 const PostItList = (props) => {
 
-    let postList = [new PostEntry("This is a long postThis is a long postThis is a long post", "melon"),
+    let postList = [new PostEntry("This is a long postThis \n\n\n\n\nis a long postThis is a long post", "melon"),
                 new PostEntry("This is post 1", "light-salmon-pink"),
                 new PostEntry("This is post 2", "champagne"),
                 new PostEntry("This is post 3", "columbia-blue")]

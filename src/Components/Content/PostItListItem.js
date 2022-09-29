@@ -6,16 +6,21 @@ import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 const PostItListItem = (props) => {
     const [content, setContent] = useState(props.entry.content);
 
+    const handleInput = (e) => {
+        setContent(e.currentTarget.textContent);
+    }
+
     const handleOnFocus = () => {
-        console.log("onfocus called from " + props.index);
+        // console.log("onfocus called from " + props.index);
     }
 
     const handleOnBlur = () => {
-        console.log("onBlur called from " + props.index)
-        props.editContent(props.index, content);
+        // console.log("onBlur called from " + props.index)
+        // props.editContent(props.index, content);
     }
 
-
+    useEffect(() => {
+    }, [content]);
 
     return (
         <div className={"postitList-entry " + props.color}>
@@ -23,17 +28,19 @@ const PostItListItem = (props) => {
                 
                     
                    <div className="postitList-entry-input" contentEditable={true} id="style-2"
-                            value={props.entry.content} 
+                            value={content} 
                             suppressContentEditableWarning={true}
                             onFocus={handleOnFocus}
                             onBlur={handleOnBlur}
-                            onInput={(e) => {setContent(e.currentTarget.textContent)}}
+                            onInput={(e) => {handleInput(e);}}
+                            
                             >
                         {/* <input className="postitList-entry-input" 
                             defaultValue={props.entry.content} 
                             onChange={(e) => {setContent(e.target.value)}}
                             onBlur={() => {props.editContent(props.index, content); setEditMode(false)}}/> */}
-                            {props.entry.content}
+                            {/* <pre>{props.entry.content}</pre> */}
+                            {content}
                     </div>
                     
                 

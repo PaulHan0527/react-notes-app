@@ -110,7 +110,7 @@
     margin-top: 2%;
     
     display: inline-block;
-    white-space: normal;
+    white-space: pre-line;
     overflow: scroll;
 
     /* border: blue dashed 1px; */
