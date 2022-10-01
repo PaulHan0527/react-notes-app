@@ -1,27 +1,28 @@
 import React, { useEffect, useState, useRef } from "react";
 import '../css/postitList.css';
+import useDropdownMenu from "react-accessible-dropdown-menu-hook";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
 const PostItListItem = (props) => {
     const [content, setContent] = useState(props.entry.content);
 
+    const { buttonProps, itemProps, isOpen, setIsOpen } = useDropdownMenu(2);
+
     const handleOnFocus = () => {
-        // console.log("onfocus called from " + props.index);
         props.setCurrentEditMode(props.index);
     }
 
     const handleOnBlur = () => {
-        // console.log("onBlur called from " + props.index)
-        // props.editContent(props.index, content);
         if(props.currentEditMode !== null) {
             props.editContent(props.index, content);
         }
         props.setCurrentEditMode(null);
     }
 
-    const handleKeyDown = (e) => {
-        // console.log(e);
+    const handleDelete = () => {
+        setIsOpen(false);
+        props.deleteItem(props.index);
     }
 
     useEffect(() => {
@@ -38,7 +39,7 @@ const PostItListItem = (props) => {
                             suppressContentEditableWarning={true}
                             onFocus={handleOnFocus}
                             onBlur={handleOnBlur}
-                            onInput={(e) => {handleKeyDown(e); setContent(e.target.innerText);}}
+                            onInput={(e) => {setContent(e.target.innerText);}}
                             // onKeyDown={(e) => handleKeyDown(e)}
                             
                             >
@@ -54,12 +55,13 @@ const PostItListItem = (props) => {
 
 
                 <div className="postitList-entry-header">
-                    <div className="postitList-entry-menu-button">
+                    <button {...buttonProps} className="postitList-entry-menu-button">
                         <FontAwesomeIcon icon={faEllipsis} />
+                    </button>
+                    <div className={isOpen ? 'visible' : ''} role="menu">
+                        {/* <div className="menu-buttons" {...itemProps[0]}>Change Color</div> */}
+                        <div className="menu-buttons" {...itemProps[1]} onClick={handleDelete}>Delete</div>
                     </div>
-                    {/* <div className="dropdown-content">
-
-                    </div> */}
                 </div>
             </div>
         </div>

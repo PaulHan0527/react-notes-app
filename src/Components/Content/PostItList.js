@@ -16,13 +16,19 @@ const PostItList = (props) => {
 
     const addItem = () => {
         let temp = [...list];
-        temp.push(new PostEntry("", "melon"));
+        temp.push(new PostEntry("", props.colorOptions[Math.floor(Math.random() * (props.colorOptions.length))]));
         setList(temp);
     }
 
     const editContent = (index, content) => {
         let temp = [...list];
         temp[index].content = content;
+        setList(temp);
+    }
+
+    const deleteItem = (index) => {
+        let temp = [...list];
+        temp.splice(index, 1);
         setList(temp);
     }
 
@@ -52,9 +58,10 @@ const PostItList = (props) => {
 
                         currentEditMode={currentEditMode}
                         setCurrentEditMode={setCurrentEditMode}
+                        deleteItem={deleteItem}
                     />
                 }).reverse()
-                : <div>
+                : <div className="no-item-message">
                     There are no items.
                 </div>
                 } 
