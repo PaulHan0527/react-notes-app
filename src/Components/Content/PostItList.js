@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { createRef, useEffect, useState } from "react";
 import '../css/postitList.css';
 import PostEntry from "./Classes/PostEntry";
 import PostItListItem from "./PostItListItem";
@@ -11,15 +11,12 @@ const PostItList = (props) => {
                 new PostEntry("This is post 3", "columbia-blue")]
     
     const [list, setList] = useState(postList);
+    const [currentEditMode, setCurrentEditMode] = useState(null);
     
-
-    const checkOnblur = (index) => {
-        
-    }
 
     const addItem = () => {
         let temp = [...list];
-        temp.unshift(new PostEntry("", "melon"));
+        temp.push(new PostEntry("", "melon"));
         setList(temp);
     }
 
@@ -28,6 +25,7 @@ const PostItList = (props) => {
         temp[index].content = content;
         setList(temp);
     }
+
 
 
     return (
@@ -51,9 +49,11 @@ const PostItList = (props) => {
                         list={list}
                         color={entry.color}
                         editContent={editContent}
-                        checkOnblur={checkOnblur}
+
+                        currentEditMode={currentEditMode}
+                        setCurrentEditMode={setCurrentEditMode}
                     />
-                })
+                }).reverse()
                 : <div>
                     There are no items.
                 </div>

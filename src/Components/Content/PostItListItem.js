@@ -6,21 +6,28 @@ import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 const PostItListItem = (props) => {
     const [content, setContent] = useState(props.entry.content);
 
-    const handleInput = (e) => {
-        setContent(e.currentTarget.textContent);
-    }
-
     const handleOnFocus = () => {
         // console.log("onfocus called from " + props.index);
+        props.setCurrentEditMode(props.index);
     }
 
     const handleOnBlur = () => {
         // console.log("onBlur called from " + props.index)
         // props.editContent(props.index, content);
+        if(props.currentEditMode !== null) {
+            props.editContent(props.index, content);
+        }
+        props.setCurrentEditMode(null);
+    }
+
+    const handleKeyDown = (e) => {
+        // console.log(e);
     }
 
     useEffect(() => {
-    }, [content]);
+        // console.log(content);
+    }, [content])
+
 
     return (
         <div className={"postitList-entry " + props.color}>
@@ -28,11 +35,11 @@ const PostItListItem = (props) => {
                 
                     
                    <div className="postitList-entry-input" contentEditable={true} id="style-2"
-                            value={content} 
                             suppressContentEditableWarning={true}
                             onFocus={handleOnFocus}
                             onBlur={handleOnBlur}
-                            onInput={(e) => {handleInput(e);}}
+                            onInput={(e) => {handleKeyDown(e); setContent(e.target.innerText);}}
+                            // onKeyDown={(e) => handleKeyDown(e)}
                             
                             >
                         {/* <input className="postitList-entry-input" 
@@ -40,7 +47,7 @@ const PostItListItem = (props) => {
                             onChange={(e) => {setContent(e.target.value)}}
                             onBlur={() => {props.editContent(props.index, content); setEditMode(false)}}/> */}
                             {/* <pre>{props.entry.content}</pre> */}
-                            {content}
+                            {props.entry.content}
                     </div>
                     
                 
