@@ -11,10 +11,8 @@ const NoteListItem = (props) => {
             // open modal for document
         }
         else {
-            console.log(props.index);
             props.setSelected(props.index);
         }
-
     }
 
     return (
