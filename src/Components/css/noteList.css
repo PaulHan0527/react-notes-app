@@ -1,6 +1,60 @@
 .noteList-container {
-    border-color: red;
-    border-style: dashed;
+    /* border-color: red;
+    border-style: dashed; */
     height: 92%;
     margin: 3%;
+}
+
+.noteList-header {
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    /* border: red dashed; */
+}
+
+.noteList-header-name {
+    background-color: rgb(221, 255, 205);
+    border-radius: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+.noteList-header-button {
+    background-color: rgb(253, 255, 230);
+    border-radius: 20px;
+    width: 10%;
+    font-weight: 500;
+    text-align: center;
+    margin-left: 70%;
+    
+}
+.noteList-header-button:hover {
+    cursor: pointer;
+    background-color: rgb(247, 255, 157);
+}
+
+.noteList-content {
+    margin-top: 3%;
+    height: 80%;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+}
+
+.file-icon {
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 2%;
+    height: 20%;
+    width: 10%;
+    border: dashed red 2px;
+}
+
+.file-icon:hover {
+    cursor: pointer;
+}
+
+.clicked {
+    border: dashed grey 2px;
 }

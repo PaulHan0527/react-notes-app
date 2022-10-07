@@ -22,7 +22,6 @@ const Content = (props) => {
             </div>
             <div className='box notes-container'>
                 <NoteList 
-                    colorOptions={colorOptions}
                 />
             </div>
         </div>

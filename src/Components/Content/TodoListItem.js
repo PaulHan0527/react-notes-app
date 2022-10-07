@@ -1,9 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import '../css/todoList.css';
-import Modal from "react-modal";
 import useCollapse from "react-collapsed";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import { faTrashCan, faCaretDown, faCaretUp, faCheck, faMinus, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 const TodoListItem = (props) => {

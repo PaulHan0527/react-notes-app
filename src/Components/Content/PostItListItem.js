@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import '../css/postitList.css';
 import useDropdownMenu from "react-accessible-dropdown-menu-hook";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
